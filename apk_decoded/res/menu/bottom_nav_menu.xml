@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:icon="@drawable/ic_airtel" android:id="@id/nav_esaf" android:title="@string/nav_esaf" />
+    <item android:icon="@drawable/ic_settings" android:id="@id/nav_settings" android:title="@string/nav_settings" />
+</menu>

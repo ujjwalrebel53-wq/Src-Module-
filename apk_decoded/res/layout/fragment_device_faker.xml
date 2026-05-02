@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/backgroundDark" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:background="@drawable/bg_card_dark" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="12.0dip">
+        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="@color/textPrimary" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="🔮 Device Faker" android:layout_weight="1.0" />
+            <androidx.appcompat.widget.SwitchCompat android:id="@id/fakerMasterSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        </LinearLayout>
+        <TextView android:textSize="12.0sp" android:textColor="@color/textHint" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="Randomize device fingerprints per app. Selected apps will see a completely different device." />
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip">
+            <com.google.android.material.button.MaterialButton android:textSize="12.0sp" android:id="@id/fakerRandomizeAllBtn" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="🎲 Randomize All" android:layout_weight="1.0" android:textAllCaps="false" android:layout_marginEnd="4.0dip" style="@style/Widget.Material3.Button.TonalButton" />
+            <com.google.android.material.button.MaterialButton android:textSize="12.0sp" android:id="@id/fakerClearAllBtn" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="🗑️ Clear All" android:layout_weight="1.0" android:textAllCaps="false" android:layout_marginStart="4.0dip" style="@style/Widget.Material3.Button.TonalButton" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="6.0dip">
+            <com.google.android.material.button.MaterialButton android:textSize="12.0sp" android:id="@id/fakerBackupBtn" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="💾 Backup" android:layout_weight="1.0" android:textAllCaps="false" android:layout_marginEnd="4.0dip" style="@style/Widget.Material3.Button.OutlinedButton" />
+            <com.google.android.material.button.MaterialButton android:textSize="12.0sp" android:id="@id/fakerImportBtn" android:layout_width="0.0dip" android:layout_height="40.0dip" android:text="📥 Import" android:layout_weight="1.0" android:textAllCaps="false" android:layout_marginStart="4.0dip" style="@style/Widget.Material3.Button.OutlinedButton" />
+        </LinearLayout>
+    </LinearLayout>
+    <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:hint="Search apps…" android:layout_marginStart="12.0dip" android:layout_marginEnd="12.0dip" app:boxBackgroundMode="outline" app:boxCornerRadiusBottomEnd="12.0dip" app:boxCornerRadiusBottomStart="12.0dip" app:boxCornerRadiusTopEnd="12.0dip" app:boxCornerRadiusTopStart="12.0dip" app:boxStrokeColor="@color/accentElectric" app:hintTextColor="@color/textHint">
+        <com.google.android.material.textfield.TextInputEditText android:textSize="14.0sp" android:textColor="@color/textPrimary" android:id="@id/fakerSearchInput" android:layout_width="fill_parent" android:layout_height="wrap_content" android:inputType="text" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <TextView android:textSize="12.0sp" android:textColor="@color/textSecondary" android:id="@id/fakerActiveCount" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="0 apps with fake profiles" android:layout_marginStart="16.0dip" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@id/fakerAppList" android:clipToPadding="false" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" />
+    <TextView android:textSize="14.0sp" android:textColor="@color/textHint" android:gravity="center" android:id="@id/fakerEmptyText" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="0.0dip" android:text="No apps found" android:layout_weight="1.0" />
+</LinearLayout>
