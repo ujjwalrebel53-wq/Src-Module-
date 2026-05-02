@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@color/backgroundDark" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:elevation="4.0dip" android:backgroundTint="#ff1e1e2e" app:cardCornerRadius="16.0dip">
+            <LinearLayout android:orientation="vertical" android:padding="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="18.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Airtel Hook" />
+                <TextView android:textSize="12.0sp" android:textColor="#80ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="UPI SMS verification bypass + Token time extension" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip">
+                    <TextView android:textSize="15.0sp" android:textColor="#ffe0e0e0" android:layout_width="0.0dip" android:layout_height="wrap_content" android:text="Enable Airtel Hook" android:layout_weight="1.0" />
+                    <androidx.appcompat.widget.SwitchCompat android:id="@id/esafHookSwitch" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:elevation="4.0dip" android:backgroundTint="#ff1e1e2e" app:cardCornerRadius="16.0dip">
+            <LinearLayout android:orientation="vertical" android:padding="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Status" />
+                <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="12.0dip">
+                    <View android:id="@id/statusDot" android:background="@drawable/status_dot_idle" android:layout_width="10.0dip" android:layout_height="10.0dip" />
+                    <TextView android:textSize="14.0sp" android:textColor="#ffaaaaaa" android:id="@id/tokenStatusText" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Waiting for Airtel app..." android:layout_marginStart="10.0dip" />
+                </LinearLayout>
+                <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="16.0dip">
+                    <TextView android:textSize="12.0sp" android:textColor="#80ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📦 Package: com.myairtelapp" />
+                    <TextView android:textSize="12.0sp" android:textColor="#80ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="⚙️ Engine: Native Normalisation" />
+                    <TextView android:textSize="12.0sp" android:textColor="#80ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="🔑 Strategy: SMS verification bypass (6-layer)" />
+                    <TextView android:textSize="12.0sp" android:textColor="#80ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="⏱️ Token Polling: Extended (infinite retries)" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dip" android:elevation="4.0dip" android:backgroundTint="#ff1e1e2e" app:cardCornerRadius="16.0dip">
+            <LinearLayout android:orientation="vertical" android:padding="20.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <TextView android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hook Points" />
+                <TextView android:textSize="12.0sp" android:textColor="#ffb0b0b0" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="12.0dip" android:text="🔴 UpiSmsSendReceiver.onReceive\n   → Force resultCode = RESULT_OK\n\n🔴 SBSmsSendReceiver.onReceive\n   → Force resultCode = RESULT_OK\n\n🟡 ki.l.c() — SMS sent box verification\n   → Bypass content://sms/sent check\n   → Call success callback directly\n\n🟡 Error callback suppression\n   → If.g.g / ki.j.b / U3.i.b\n   → Block MSG_DELIVERY_FAILED\n\n🟢 Token timing extension\n   → read_sms_count: 5 → 50\n   → regPollCounter: always 0\n\n🟢 BroadcastReceiver.getResultCode\n   → Always return -1 for Airtel" android:lineSpacingExtra="2.0dip" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <Button android:textSize="16.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/launchEsafBtn" android:background="@drawable/btn_launch_red" android:layout_width="fill_parent" android:layout_height="56.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="16.0dip" android:text="🚀  LAUNCH AIRTEL" android:textAllCaps="false" />
+        <TextView android:textSize="11.0sp" android:textColor="#40ffffff" android:gravity="center" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="8.0dip" android:text="Swipe to view Navi ▶" />
+    </LinearLayout>
+</ScrollView>

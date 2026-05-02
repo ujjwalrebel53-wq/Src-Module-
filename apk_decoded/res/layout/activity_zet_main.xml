@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@drawable/bg_main_gradient" android:fitsSystemWindows="false" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:paddingTop="24.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="24.0dip" android:paddingEnd="24.0dip">
+        <LinearLayout android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true">
+            <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/tv_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="REBEL MODULE" android:fontFamily="sans-serif-medium" android:letterSpacing="0.2" />
+            <TextView android:textSize="10.0sp" android:textColor="#336dd5ed" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="PROTECTION SYSTEM" android:letterSpacing="0.3" />
+        </LinearLayout>
+        <LinearLayout android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
+            <ImageButton android:id="@id/btn_data" android:background="@drawable/bg_icon_circle" android:padding="10.0dip" android:layout_width="42.0dip" android:layout_height="42.0dip" android:src="@drawable/ic_database" android:tint="#ffffffff" android:onClick="onDataManagementClick" android:contentDescription="Data" android:layout_marginEnd="10.0dip" android:elevation="4.0dip" />
+            <ImageButton android:id="@id/btn_settings" android:background="@drawable/bg_icon_circle" android:padding="10.0dip" android:layout_width="42.0dip" android:layout_height="42.0dip" android:src="@drawable/ic_settings" android:tint="#ffffffff" android:onClick="onSettingsClick" android:contentDescription="Settings" android:elevation="4.0dip" />
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout android:gravity="center" android:orientation="horizontal" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <TextView android:textSize="13.0sp" android:textStyle="bold" android:textColor="#ff00d4ff" android:id="@id/tv_page_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="AIRTEL THANKS" android:fontFamily="sans-serif-medium" android:layout_marginEnd="12.0dip" android:letterSpacing="0.15" />
+        <View android:id="@id/dot_esaf" android:background="@drawable/dot_active" android:layout_width="8.0dip" android:layout_height="8.0dip" android:layout_marginEnd="6.0dip" />
+        <View android:id="@id/dot_navi" android:background="@drawable/dot_inactive" android:layout_width="8.0dip" android:layout_height="8.0dip" android:layout_marginEnd="6.0dip" />
+        <View android:id="@id/dot_zagg" android:background="@drawable/dot_inactive" android:layout_width="8.0dip" android:layout_height="8.0dip" />
+    </LinearLayout>
+    <androidx.viewpager2.widget.ViewPager2 android:id="@id/appPager" android:layout_width="fill_parent" android:layout_height="0.0dip" android:layout_weight="1.0" />
+    <TextView android:textSize="10.0sp" android:textColor="#44ffffff" android:gravity="center" android:paddingTop="8.0dip" android:paddingBottom="16.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="REBEL MODULE CORE • V3.1 PREMIUM" android:fontFamily="monospace" android:letterSpacing="0.2" />
+</LinearLayout>

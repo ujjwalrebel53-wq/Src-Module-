@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:background="@android:color/transparent" android:layout_width="fill_parent" android:layout_height="fill_parent" android:fillViewport="true"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:padding="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+        <LinearLayout android:orientation="vertical" android:background="@drawable/bg_premium_card" android:padding="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:elevation="8.0dip">
+            <TextView android:textSize="12.0sp" android:textColor="#ff4caf50" android:id="@id/tv_esaf_status" android:background="@drawable/badge_bg_green" android:paddingTop="6.0dip" android:paddingBottom="6.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="● READY" android:fontFamily="sans-serif-medium" android:paddingStart="12.0dip" android:paddingEnd="12.0dip" android:elevation="2.0dip" android:letterSpacing="0.2" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="24.0dip">
+                <ImageView android:id="@id/iv_esaf_icon" android:layout_width="64.0dip" android:layout_height="64.0dip" android:src="@drawable/ic_airtel" android:contentDescription="Airtel" android:layout_marginEnd="16.0dip" android:elevation="4.0dip" />
+                <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="24.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/tv_esaf_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Airtel Thanks" android:fontFamily="sans-serif-medium" android:letterSpacing="0.05" />
+                    <TextView android:textSize="12.0sp" android:textColor="#88ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dip" android:text="com.myairtelapp" android:fontFamily="monospace" />
+                </LinearLayout>
+            </LinearLayout>
+            <Button android:textSize="15.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:id="@id/btn_launch_esaf" android:background="@drawable/btn_premium_primary" android:layout_width="fill_parent" android:layout_height="52.0dip" android:text="LAUNCH AIRTEL" android:textAllCaps="true" android:fontFamily="sans-serif-medium" android:elevation="6.0dip" android:stateListAnimator="@null" android:letterSpacing="0.1" />
+        </LinearLayout>
+        <LinearLayout android:orientation="vertical" android:background="@drawable/bg_premium_card" android:padding="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:elevation="4.0dip">
+            <TextView android:textSize="14.0sp" android:textStyle="bold" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dip" android:text="PROTECTION HOOKS" android:fontFamily="sans-serif-medium" android:letterSpacing="0.1" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:background="@drawable/bg_icon_circle" android:padding="6.0dip" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/ic_logs" android:tint="#ff4facfe" android:contentDescription="Airtel Hook" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Airtel UPI SMS Fix" android:fontFamily="sans-serif-medium" />
+                    <TextView android:textSize="12.0sp" android:textColor="#88ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="SMS verification bypass (6-layer)" />
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat android:id="@id/sw_native_hook" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+            <View android:background="#1affffff" android:layout_width="fill_parent" android:layout_height="1.0dip" android:layout_marginTop="8.0dip" android:layout_marginBottom="8.0dip" />
+            <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingTop="12.0dip" android:paddingBottom="12.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <ImageView android:background="@drawable/bg_icon_circle" android:padding="6.0dip" android:layout_width="32.0dip" android:layout_height="32.0dip" android:src="@drawable/ic_shield" android:tint="#ff4facfe" android:contentDescription="Token Extension" android:layout_marginEnd="16.0dip" />
+                <LinearLayout android:orientation="vertical" android:layout_width="0.0dip" android:layout_height="wrap_content" android:layout_weight="1.0">
+                    <TextView android:textSize="15.0sp" android:textColor="#ffffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Token Time Extension" android:fontFamily="sans-serif-medium" />
+                    <TextView android:textSize="12.0sp" android:textColor="#88ffffff" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dip" android:text="Extend polling + retry for UPI token" />
+                </LinearLayout>
+                <androidx.appcompat.widget.SwitchCompat android:id="@id/sw_java_hook" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
