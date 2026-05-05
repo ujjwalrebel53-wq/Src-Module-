@@ -20,6 +20,31 @@ This repository contains a decoded Android APK (`Rebel Module.apk`) analyzed wit
 - **Decompile APK to Java**: `jadx -d /tmp/jadx_output "Rebel Module.apk"`
 - **Decode APK fresh**: `apktool d "Rebel Module.apk" -o apk_decoded -f`
 
+### Running the APK on an emulator
+
+The APK can be run on an Android emulator, but with caveats:
+
+1. **No KVM**: The Cloud VM lacks `/dev/kvm`, so emulation runs in software mode (`-accel off`). Boot takes ~3-5 minutes.
+2. **Signing**: The original APK is unsigned. To install, rebuild with `apktool b`, then sign with `apksigner` (v2 signing required). The manifest's `extractNativeLibs="false"` must be changed to `true` for emulator installs.
+3. **GPU rendering**: The emulator's display rendering is unreliable in the Cloud VM (black screen). Use ADB commands (`adb shell dumpsys activity`) to verify the app state rather than relying on visual output.
+4. **Install method**: Use `adb push <apk> /data/local/tmp/app.apk && adb shell pm install -t /data/local/tmp/app.apk` rather than `adb install` for reliability.
+
+Quick install flow:
+```bash
+export PATH="/opt/android-sdk/platform-tools:/opt/android-sdk/build-tools/30.0.3:$PATH"
+# Rebuild (from temp copy to avoid modifying repo)
+cp -r apk_decoded /tmp/apk_tmp
+sed -i 's/extractNativeLibs="false"/extractNativeLibs="true"/' /tmp/apk_tmp/AndroidManifest.xml
+apktool b /tmp/apk_tmp -o /tmp/app_unsigned.apk
+# Sign (v2)
+apksigner sign --ks /tmp/debug.keystore --ks-pass pass:android --ks-key-alias androiddebugkey --key-pass pass:android /tmp/app_unsigned.apk
+# Install
+adb push /tmp/app_unsigned.apk /data/local/tmp/app.apk
+adb shell pm install -t /data/local/tmp/app.apk
+# Launch
+adb shell am start -n com.rebel.module/.ZetLoginActivity
+```
+
 ### Caveats
 
 - `jadx` exits with code 1 and reports ~17 errors on this APK due to obfuscated code; this is expected and the output is still usable.
